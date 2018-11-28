@@ -41,9 +41,9 @@ const addComputerPoints = () => {
 
 const checkPoints = () => {
     if (userPoints == 3) {
-        // code here
+        win.style.display = 'block'
     } else if (computerPoints == 3) {
-        // code here
+        gameover.style.display = 'block'
     }
 }
 
