@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', event => {
         userChoice = 'scissors'
         generateComputerChoice()
     })
+
+    win.style.display = 'none'
+    gameover.style.display = 'none'
 })
 
 const addUserPoints = () => {
