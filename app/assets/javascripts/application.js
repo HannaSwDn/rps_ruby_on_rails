@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', event => {
     scissors = document.querySelector('#scissors')
     win = document.querySelector('#win')
     gameover = document.querySelector('#gameover')
-    p_points = documnet.querySelector('#points')
+    p_points = document.querySelector('#points')
 
     rock.addEventListener('click', event => {
         userChoice = 'rock'
@@ -47,6 +47,24 @@ const checkPoints = () => {
     }
 }
 
+const determineRoundWinner = () => {
+    if (userChoice == computerChoice) {
+        return
+    } else if (userChoice == 'rock' && computerChoice == 'paper') {
+        addComputerPoints()
+    } else if (userChoice == 'rock' && computerChoice == 'scissors') {
+        addUserPoints()
+    } else if (userChoice == 'paper' && computerChoice == 'rock') {
+        addUserPoints()
+    } else if (userChoice == 'paper' && computerChoice == 'scissors') {
+        addComputerPoints()
+    } else if (userChoice == 'scissors' && computerChoice == 'rock') {
+        addComputerPoints()
+    } else if (userChoice == 'scissors' && computerChoice == 'paper') {
+        addUserPoints()
+    }
+}
+
 const generateComputerChoice = () => {
     computerChoice = Math.floor(Math.random() * 3 + 1)
 
@@ -61,4 +79,5 @@ const generateComputerChoice = () => {
             computerChoice = 'scissors'
             break
     }
+    determineRoundWinner()
 }
