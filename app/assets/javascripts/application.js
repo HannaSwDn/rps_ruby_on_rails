@@ -2,7 +2,9 @@
 let rock, paper, scissors
 
 // global variables
-let userPoints, computerPoints, userChoice, computerChoice, win, gameover, p_points
+let userChoice, computerChoice, win, gameover, p_points
+let userPoints = 0
+let computerPoints = 0
 
 // setting DOM variables when the DOM is loaded
 document.addEventListener('DOMContentLoaded', event => {
@@ -31,11 +33,13 @@ document.addEventListener('DOMContentLoaded', event => {
 
 const addUserPoints = () => {
     userPoints++
+    p_points.innerHTML = `Your points: ${userPoints} | Computer points: ${computerPoints}`
     checkPoints()
 }
 
 const addComputerPoints = () => {
     computerPoints++
+    p_points.innerHTML = `Your points: ${userPoints} | Computer points: ${computerPoints}`
     checkPoints()
 }
 
