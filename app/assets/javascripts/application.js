@@ -28,10 +28,20 @@ document.addEventListener('DOMContentLoaded', event => {
 
 const addUserPoints = () => {
     userPoints++
+    checkPoints()
 }
 
 const addComputerPoints = () => {
     computerPoints++
+    checkPoints()
+}
+
+const checkPoints = () => {
+    if (userPoints == 3) {
+        // code here
+    } else if (computerPoints == 3) {
+        // code here
+    }
 }
 
 const generateComputerChoice = () => {
