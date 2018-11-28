@@ -26,9 +26,17 @@ document.addEventListener('DOMContentLoaded', event => {
     })
 })
 
+const addUserPoints = () => {
+    userPoints++
+}
+
+const addComputerPoints = () => {
+    computerPoints++
+}
+
 const generateComputerChoice = () => {
     computerChoice = Math.floor(Math.random() * 3 + 1)
-    
+
     switch(computerChoice) {
         case 1:
             computerChoice = 'rock'
