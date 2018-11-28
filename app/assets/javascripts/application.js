@@ -88,3 +88,11 @@ const generateComputerChoice = () => {
     }
     determineRoundWinner()
 }
+
+const startOver = () => {
+    win.style.display = 'none'
+    gameover.style.display = 'none'
+    userPoints = 0
+    computerPoints = 0
+    p_points.innerHTML = `Your points: ${userPoints} | Computer points: ${computerPoints}`
+}
