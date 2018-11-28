@@ -2,7 +2,7 @@
 let rock, paper, scissors
 
 // global variables
-let userPoints, computerPoints, userChoice, computerChoice, win, gameover
+let userPoints, computerPoints, userChoice, computerChoice, win, gameover, p_points
 
 // setting DOM variables when the DOM is loaded
 document.addEventListener('DOMContentLoaded', event => {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', event => {
     scissors = document.querySelector('#scissors')
     win = document.querySelector('#win')
     gameover = document.querySelector('#gameover')
+    p_points = documnet.querySelector('#points')
 
     rock.addEventListener('click', event => {
         userChoice = 'rock'
