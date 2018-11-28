@@ -2,7 +2,7 @@
 let rock, paper, scissors
 
 // global variables
-let userChoice, computerChoice, win, gameover, p_points
+let userChoice, computerChoice, win, gameover, p_points, p_status
 let userPoints = 0
 let computerPoints = 0
 
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', event => {
     win = document.querySelector('#win')
     gameover = document.querySelector('#gameover')
     p_points = document.querySelector('#points')
+    p_status = document.querySelector('#status')
 
     rock.addEventListener('click', event => {
         userChoice = 'rock'
@@ -36,14 +37,26 @@ document.addEventListener('DOMContentLoaded', event => {
 
 const addUserPoints = () => {
     userPoints++
-    p_points.innerHTML = `Your points: ${userPoints} | Computer points: ${computerPoints}`
+    p_status.innerHTML = `Computer chose ${computerChoice}, you chose ${userChoice}`
+    displayPoints()
     checkPoints()
 }
 
 const addComputerPoints = () => {
     computerPoints++
-    p_points.innerHTML = `Your points: ${userPoints} | Computer points: ${computerPoints}`
+    p_status.innerHTML = `Computer chose ${computerChoice}, you chose ${userChoice}`
+    displayPoints()
     checkPoints()
+}
+
+const displayPoints = () => {
+    if (userPoints == computerPoints) {
+        p_points.innerHTML = `${userPoints} - ${computerPoints}`
+    } else if (userPoints > computerPoints) {
+        p_points.innerHTML = `${userPoints} - ${computerPoints} to you`
+    } else {
+        p_points.innerHTML = `${computerPoints} - ${userPoints} to the computer`
+    }
 }
 
 const checkPoints = () => {
@@ -56,7 +69,7 @@ const checkPoints = () => {
 
 const determineRoundWinner = () => {
     if (userChoice == computerChoice) {
-        return
+        p_status.innerHTML = `It is a tie, nobody gets a point`
     } else if (userChoice == 'rock' && computerChoice == 'paper') {
         addComputerPoints()
     } else if (userChoice == 'rock' && computerChoice == 'scissors') {
@@ -94,5 +107,6 @@ const startOver = () => {
     gameover.style.display = 'none'
     userPoints = 0
     computerPoints = 0
-    p_points.innerHTML = `Your points: ${userPoints} | Computer points: ${computerPoints}`
+    p_points.innerHTML = `0 - 0`
+    p_status.innerHTML = ''
 }
