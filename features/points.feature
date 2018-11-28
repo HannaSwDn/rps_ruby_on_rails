@@ -6,4 +6,5 @@ Feature: Adding points
 
     Scenario: User gets a point
         Given I visit the site
-        Then I should see 'Points: 0'
+        Then I should see '0 - 0'
+        Then I click 'rock'
