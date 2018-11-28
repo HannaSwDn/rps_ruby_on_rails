@@ -5,3 +5,5 @@ Feature: Adding points
     I would like to see how many points each player has
 
     Scenario: User gets a point
+        Given I visit the page
+        
