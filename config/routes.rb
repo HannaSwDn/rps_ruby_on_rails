@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'homepage/index'
+  resources :homepage
 
-  root 'homepage#index'
+  root controller: :homepage, action: :index
 end
